@@ -223,53 +223,83 @@ const Chatbot = () => {
             {/* Modern Header */}
             {/* Modern Header with Extend Button */}
             {/* Modern Header with Extend Button */}
-            <div
-              className={screen === 'intro' || screen === 'form' ? 'curved-rectangle' : ''}
-              style={{
-                background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
-                padding: '20px',
-                paddingTop: "40px",
-                color: 'white',
-                minHeight: "100px",
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between', // space between greeting and button
-              }}
-            >
-              <div>
-                <b>
-                  <h3 style={{ margin: 0, fontWeight: 'bold', fontFamily: "" }}>
-                    Hi {userName} 👋
-                  </h3>
-                </b>
-                <p style={{ margin: 0, fontSize: 15, paddingTop: '10px' }}>
-                  I am <b>SuAI</b>. How can we help?
-                </p>
-              </div>
+            
+           <div
+  className={screen === 'intro' || screen === 'form' ? 'curved-rectangle' : ''}
+  style={{
+    background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
+    padding: '20px',
+    color: 'white',
+    minHeight: "120px",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'stretch',
+  }}
+>
+  {/* Top Image */}
+  <div style={{ display: 'flex',  marginBottom: '10px' }}>
+    <img
+      src="./image.webp"
+      style={{
+        width: 45,
+        height:45,
+        borderRadius: '50%',
+        objectFit: 'cover'
+      }}
+    />
+    {/* <h4 style={{
+      paddingTop:"10px",
+      paddingLeft:"35%",
+      fontSize:"16px",
+      fontWeight:"bold"
+    }}> Cloud Botics Consultancy</h4> */}
+     <button
+      onClick={() => setIsExtended(!isExtended)}
+      style={{
+        background: 'transparent',
+        border: 'none',
+        color: 'white',
+        cursor: 'pointer',
+        right:"0px",
+        fontSize: '22px',
+        paddingLeft: '80%',
+        borderRadius: '8px',
+        transition: 'background-color 0.3s',
+        
+      }}
+      onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0)')}
+      onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
+      aria-label={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
+      title={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
+    >
+      {isExtended ? <HiOutlineArrowsExpand /> : <RiExpandDiagonalLine />}
+    </button>
+  </div>
 
-              {/* Extend toggle button */}
-              <button
-                onClick={() => setIsExtended(!isExtended)}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  color: 'white',
-                  cursor: 'pointer',
-                  fontSize: '22px',
-                  fontWeight: 'bold',
-                  userSelect: 'none',
-                  padding: '5px 10px',
-                  borderRadius: '8px',
-                  transition: 'background-color 0.3s',
-                }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)')}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
-                aria-label={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
-                title={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
-              >
-                {isExtended ? <HiOutlineArrowsExpand /> : <RiExpandDiagonalLine />}
-              </button>
-            </div>
+  {/* Name & Extend Button Row */}
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingTop:"10px"
+    }}
+  >
+    <div>
+      <b>
+        <h4 style={{ margin: 0, fontWeight: 'bold',fontFamily:"" }}>
+          Hi {userName} 
+        </h4>
+      </b>
+      <p style={{ margin: 0, fontSize: 14, paddingTop: '5px' }}>
+        I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br></br>How can we help?
+      </p>
+    </div>
+
+   
+  </div>
+</div>
+
 
 
 
@@ -316,10 +346,10 @@ const Chatbot = () => {
                     }}
                   >
                     {/* Search title */}
-                    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', background: "#e7e6e6bb", height: "35px", padding: "20px", borderRadius: "20px", }}>
+                    {/* <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', background: "#e7e6e6bb", height: "35px", padding: "20px", borderRadius: "20px", }}>
                       <strong style={{ flex: 1, fontSize: '15px', color: '#000' }}>Search for help</strong>
                       <FaSearch color="#3484daff" size={14} />
-                    </div>
+                    </div> */}
 
                     {/* Help options */}
                     {helpOptions.map((opt, idx) => (
@@ -377,7 +407,7 @@ const Chatbot = () => {
                     {messages.map((msg, idx) => (
                       <div key={idx} style={{ display: 'flex', justifyContent: msg.type === 'user' ? 'flex-end' : 'flex-start', marginBottom: '8px' }}>
                         {msg.type === 'bot' && (
-                          <img src="./logo.jpg" alt="Bot" style={{ width: '28px', height: '28px', marginRight: '8px', borderRadius: '50%', backgroundColor: 'green' }} />
+                          <img src="./image.webp" alt="Bot" style={{ width: '28px', height: '28px', marginRight: '8px', borderRadius: '50%', backgroundColor: 'green' }} />
                         )}
                         <div style={{
                           maxWidth: '75%',
