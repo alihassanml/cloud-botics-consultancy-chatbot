@@ -225,7 +225,13 @@ const Chatbot = () => {
             {/* Modern Header with Extend Button */}
             
            <div
-  className={screen === 'intro' || screen === 'form' ? 'curved-rectangle' : ''}
+  className={
+    screen === 'intro' || screen === 'form' 
+      ? isExtended
+        ? 'curved-rectangle-increase'
+        : 'curved-rectangle'
+      : ''
+  }
   style={{
     background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
     padding: '20px',

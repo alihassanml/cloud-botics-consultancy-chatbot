@@ -233,6 +233,14 @@
   clip-path: ellipse(calc(var(--c)*1%) 100% at top);
 
 } 
+.curved-rectangle-increase{
+   --c: 85; 
+  
+  width: 100%;
+  aspect-ratio: 2.9  /1;
+  mask: radial-gradient(calc(var(--c)*1%) 100% at 200% calc(-100%*cos(asin(50/var(--c)))),#0000 calc(100% - 1px),#000);
+  clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+}
 .form-control:focus {
   outline: none !important;
   box-shadow: none !important;
