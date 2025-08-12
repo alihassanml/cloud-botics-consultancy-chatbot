@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { FaArrowAltCircleUp, FaChevronDown, FaHome, FaEnvelope } from "react-icons/fa";
-import {  FiMessageCircle } from 'react-icons/fi';
+import { FiMessageCircle } from 'react-icons/fi';
 import { Button, Form, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactMarkdown from 'react-markdown';
@@ -223,91 +223,91 @@ const Chatbot = () => {
             {/* Modern Header */}
             {/* Modern Header with Extend Button */}
             {/* Modern Header with Extend Button */}
-            
-           <div
-  className={
-    screen === 'intro' || screen === 'form' 
-      ? isExtended
-        ? 'curved-rectangle-increase'
-        : 'curved-rectangle'
-      : ''
-  }
-  style={{
-    background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
-    padding: '20px',
-    color: 'white',
-    minHeight: "120px",
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'stretch',
-  }}
->
-  {/* Top Image */}
-  <div style={{ display: 'flex',  marginBottom: '10px' }}>
-    <img
-      src="./image.webp"
-      style={{
-        width: "45px",
-        height:"45px",
-        borderRadius: '50%',
-        objectFit: 'cover',
-        
-      }}
-    />
-    {/* <h4 style={{
+
+            <div
+              className={
+                screen === 'intro' || screen === 'form'
+                  ? isExtended
+                    ? 'curved-rectangle-increase'
+                    : 'curved-rectangle'
+                  : ''
+              }
+              style={{
+                background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
+                padding: '20px',
+                color: 'white',
+                minHeight: "120px",
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'stretch',
+              }}
+            >
+              {/* Top Image */}
+              <div style={{ display: 'flex', marginBottom: '10px' }}>
+                <img
+                  src="./image.webp"
+                  style={{
+                    width: "45px",
+                    height: "45px",
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+
+                  }}
+                />
+                {/* <h4 style={{
       paddingTop:"10px",
       paddingLeft:"35%",
       fontSize:"16px",
       fontWeight:"bold"
     }}> Cloud Botics Consultancy</h4> */}
-     <button
-      onClick={() => setIsExtended(!isExtended)}
-      style={{
-        background: 'transparent',
-        border: 'none',
-        color: 'white',
-        cursor: 'pointer',
-        right:"0px",
-        fontSize: '22px',
-        // marginLeft: '0%',
-        marginRight:"10px",
-        borderRadius: '8px',
-        transition: 'background-color 0.3s',
-        position:"absolute"
-        
-      }}
-      onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.27)')}
-      onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
-      aria-label={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
-      title={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
-    >
-      {isExtended ? <HiOutlineArrowsExpand /> : <RiExpandDiagonalLine />}
-    </button>
-  </div>
+                <button
+                  onClick={() => setIsExtended(!isExtended)}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: 'white',
+                    cursor: 'pointer',
+                    right: "0px",
+                    fontSize: '22px',
+                    // marginLeft: '0%',
+                    marginRight: "10px",
+                    borderRadius: '8px',
+                    transition: 'background-color 0.3s',
+                    position: "absolute"
 
-  {/* Name & Extend Button Row */}
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      paddingTop:"10px"
-    }}
-  >
-    <div>
-      <b>
-        <h4 style={{ margin: 0, fontWeight: 'bold',fontFamily:"" }}>
-          Hi {userName} 
-        </h4>
-      </b>
-      <p style={{ margin: 0, fontSize: 14, paddingTop: '5px' }}>
-        I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br></br>How can we help?
-      </p>
-    </div>
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.27)')}
+                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
+                  aria-label={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
+                  title={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
+                >
+                  {isExtended ? <HiOutlineArrowsExpand /> : <RiExpandDiagonalLine />}
+                </button>
+              </div>
 
-   
-  </div>
-</div>
+              {/* Name & Extend Button Row */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  paddingTop: "10px"
+                }}
+              >
+                <div>
+                  <b>
+                    <h4 style={{ margin: 0, fontWeight: 'bold', fontFamily: "" }}>
+                      Hi {userName}
+                    </h4>
+                  </b>
+                  <p style={{ margin: 0, fontSize: 14, paddingTop: '5px' }}>
+                    I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br></br>How can we help?
+                  </p>
+                </div>
+
+
+              </div>
+            </div>
 
 
 
