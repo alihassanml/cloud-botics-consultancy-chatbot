@@ -241,10 +241,11 @@ const Chatbot = () => {
     <img
       src="./image.webp"
       style={{
-        width: 45,
-        height:45,
+        width: "45px",
+        height:"45px",
         borderRadius: '50%',
-        objectFit: 'cover'
+        objectFit: 'cover',
+        
       }}
     />
     {/* <h4 style={{
@@ -262,12 +263,14 @@ const Chatbot = () => {
         cursor: 'pointer',
         right:"0px",
         fontSize: '22px',
-        paddingLeft: '80%',
+        // marginLeft: '0%',
+        marginRight:"10px",
         borderRadius: '8px',
         transition: 'background-color 0.3s',
+        position:"absolute"
         
       }}
-      onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0)')}
+      onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.27)')}
       onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
       aria-label={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
       title={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
