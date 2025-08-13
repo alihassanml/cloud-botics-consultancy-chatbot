@@ -60,7 +60,7 @@ const Chatbot = () => {
     "About Cloud Botics Consultancy",
     "Services & Solutions",
     "Pricing & Plans",
-    // "Product Features & Bots",
+    "Product Features & Bots",
     "Contact Human Support"
   ];
 
