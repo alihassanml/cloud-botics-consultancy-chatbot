@@ -388,7 +388,7 @@ const Chatbot = () => {
               {screen === 'form' && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} style={{ textAlign: 'left' }}>
                   <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                    {/* <img src="./logo.jpg" alt="Form" style={{ width: '60px', height: '60px', borderRadius: "50%", marginBottom: '15px', backgroundColor: "green" }} /> */}
+                    {/* <img src="./logo.jpg" alt="Form" style={{ width: '60px', height: '60px', borderRadius: "50%", marginBottom: '15px' }} /> */}
                     <br />
                     <h5 style={{ color: '#333', marginBottom: '10px' }}>Welcome!</h5>
                     <p style={{ color: '#666', fontSize: '14px' }}>Please share your details so I can assist you better.</p>
@@ -416,7 +416,7 @@ const Chatbot = () => {
                     {messages.map((msg, idx) => (
                       <div key={idx} style={{ display: 'flex', justifyContent: msg.type === 'user' ? 'flex-end' : 'flex-start', marginBottom: '8px' }}>
                         {msg.type === 'bot' && (
-                          <img src="./image.webp" alt="Bot" style={{ width: '28px', height: '28px', marginRight: '8px', borderRadius: '50%', backgroundColor: 'green' }} />
+                          <img src="./image.webp"  style={{ width: '28px', height: '28px', marginRight: '8px', borderRadius: '50%' }} />
                         )}
                         <div style={{
                           maxWidth: '75%',
@@ -425,7 +425,7 @@ const Chatbot = () => {
                           paddingRight: '13px',
                           borderRadius: '15px',
                           color: msg.type === 'user' ? 'white' : 'black',
-                          background: msg.type === 'user' ? 'rgba(43, 149, 211, 1)' : '#f1f1f1',
+                          background: msg.type === 'user' ? 'linear-gradient(135deg, #3484daff, #2fc4e2ff)' : '#f1f1f1',
                           fontSize: "14px"
                         }}>
                           <ReactMarkdown>{msg.text}</ReactMarkdown>
@@ -434,7 +434,7 @@ const Chatbot = () => {
                     ))}
                     {typingMessage && (
                       <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px' }}>
-                        <img src="./logo.jpg" alt="Bot" style={{ width: '28px', height: '28px', marginRight: '8px', borderRadius: '50%', backgroundColor: 'green' }} />
+                        <img src="./image.webp"  style={{ width: '28px', height: '28px', marginRight: '8px', borderRadius: '50%' }} />
                         <div className="typing-indicator">
                           <div className="typing-dot"></div>
                           <div className="typing-dot"></div>
