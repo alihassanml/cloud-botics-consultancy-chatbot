@@ -186,7 +186,7 @@ const Chatbot = () => {
           border: "none",
           color: 'white',
           boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-          zIndex: 100000
+          zIndex: "100000"
         }}
       >
         {isOpen ? <FaChevronDown size={22} /> : (<><FiMessageCircle size={22} /><span>Need Help</span></>)}
@@ -201,7 +201,7 @@ const Chatbot = () => {
             position: 'fixed',
             bottom: '80px',
             right: '20px',
-            zIndex: 100000,
+            zIndex: "100000",
 
           }}
         >
@@ -212,8 +212,10 @@ const Chatbot = () => {
               display: 'flex',
               flexDirection: 'column',
               borderRadius: "30px",
+              border:"none",
               overflow: "hidden",
               transition: 'width 0.3s ease, height 0.3s ease',
+              zIndex:"100000"
             }}
           >
 
@@ -528,7 +530,7 @@ const Chatbot = () => {
                 fontFamily: "'Segoe UI', sans-serif",
                 fontWeight: 500,
                 boxShadow: (screen === 'intro' || screen === 'form' || screen === 'appointment') ? "0 5px 10px #b3b3b3ff" : "none",
-                zIndex: 100000
+                zIndex: "100000"
               }}
             >
               {[
