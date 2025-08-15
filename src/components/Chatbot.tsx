@@ -5,7 +5,7 @@ import { Button, Form, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactMarkdown from 'react-markdown';
 import { motion } from "framer-motion";
-import { FaChevronRight, FaSearch } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa';
 import { FaBookmark } from "react-icons/fa";
 import { RiExpandDiagonalLine } from "react-icons/ri";
 import { HiOutlineArrowsExpand } from "react-icons/hi";
