@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  list-style: none;
+  /* color: ; */
+}
+
+
+html, body, #root {
+    background-color: transparent !important;
+    /* background-color: rgb(17, 29, 49); */
+    border: none  ;
+    opacity: 1;
+}
+
 
 .chatbot-wrapper {
   position: fixed;
