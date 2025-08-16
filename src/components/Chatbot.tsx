@@ -207,8 +207,8 @@ const Chatbot = () => {
         >
           <Card
             style={{
-              width: isExtended ? '600px' : '400px',
-              height: isExtended ? '650px' : '650px',
+              width: isExtended ? '400px' : '400px',
+              height: isExtended ? '610px' : '610px',
               display: 'flex',
               flexDirection: 'column',
               borderRadius: "30px",
@@ -241,11 +241,12 @@ const Chatbot = () => {
                 background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
                 padding: '20px',
                 color: 'white',
-                minHeight: "120px",
+                minHeight: "100px",
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'stretch',
                 zIndex: "214748364"
+                
               }}
             >
               {/* Top Image */}
@@ -260,37 +261,14 @@ const Chatbot = () => {
 
                   }}
                 />
-                {/* <h4 style={{
+                <br />
+               {screen === 'chat'  && ( <h4 style={{
       paddingTop:"10px",
-      paddingLeft:"35%",
+      paddingLeft:"1%",
       fontSize:"16px",
       fontWeight:"bold"
-    }}> Cloud Botics Consultancy</h4> */}
-                <button
-                  onClick={() => setIsExtended(!isExtended)}
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    color: 'white',
-                    cursor: 'pointer',
-                    right: "0px",
-                    fontSize: '22px',
-                    // marginLeft: '0%',
-                    marginRight: "10px",
-                    borderRadius: '8px',
-                    transition: 'background-color 0.3s',
-                    position: "absolute",
-                    zIndex: "214748364"
-
-
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.27)')}
-                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
-                  aria-label={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
-                  title={isExtended ? "Shrink Chatbot" : "Extend Chatbot"}
-                >
-                  {isExtended ? <HiOutlineArrowsExpand /> : <RiExpandDiagonalLine />}
-                </button>
+    }}> {userName}</h4>
+)}
               </div>
 
               {/* Name & Extend Button Row */}
@@ -302,16 +280,18 @@ const Chatbot = () => {
                   paddingTop: "10px"
                 }}
               >
+                 {screen !== 'chat'  && (
                 <div>
                   <b>
-                    <h4 style={{ margin: 0, fontWeight: 'bold', fontFamily: "" }}>
+                    <h5 style={{ margin: 0, fontWeight: 'bold', fontFamily: "" }}>
                       Hi {userName}
-                    </h4>
+                    </h5>
                   </b>
-                  <p style={{ margin: 0, fontSize: 14, paddingTop: '5px' }}>
+                  <p style={{ margin: 0, fontSize: 13, paddingTop: '5px' }}>
                     I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br></br>How can we help?
                   </p>
                 </div>
+              )}
 
 
               </div>
@@ -400,8 +380,7 @@ const Chatbot = () => {
                   <div style={{ textAlign: 'center', marginBottom: '20px' }}>
                     {/* <img src="./logo.jpg" alt="Form" style={{ width: '60px', height: '60px', borderRadius: "50%", marginBottom: '15px' }} /> */}
                     <br />
-                    <h5 style={{ color: '#333', marginBottom: '10px' }}>Welcome!</h5>
-                    <p style={{ color: '#666', fontSize: '14px' }}>Please share your details so I can assist you better.</p>
+                    <h5 style={{ color: '#333', marginBottom: '10px',fontWeight:"bold",fontFamily:"'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" }}>Welcome!</h5>
                   </div>
                   <Form style={{ maxWidth: '300px', margin: 'auto' }}>
                     <Form.Label style={{ fontWeight: '500', color: '#333' }}>Name</Form.Label>
