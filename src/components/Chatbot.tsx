@@ -175,7 +175,7 @@ const Chatbot = () => {
           position: 'fixed',
           bottom: '20px',
           right: '20px',
-          width: isOpen ? '50px' : '180px',
+          width: isOpen ? '50px' : '50px',
           height: '50px',
           borderRadius: isOpen ? '50%' : '25px',
           display: 'flex',
@@ -189,7 +189,7 @@ const Chatbot = () => {
           zIndex: "100000"
         }}
       >
-        {isOpen ? <FaChevronDown size={22} /> : (<><FiMessageCircle size={22} /><span>Need Help</span></>)}
+        {isOpen ? <FaChevronDown size={22} /> : <FiMessageCircle size={22} />}
       </Button>
 
       {isOpen && (
@@ -201,7 +201,7 @@ const Chatbot = () => {
             position: 'fixed',
             bottom: '80px',
             right: '20px',
-            zIndex: "100000",
+              zIndex:"214748364"
 
           }}
         >
@@ -215,7 +215,10 @@ const Chatbot = () => {
               border:"none",
               overflow: "hidden",
               transition: 'width 0.3s ease, height 0.3s ease',
-              zIndex:"100000"
+              zIndex:"214748364",
+              backgroundColor:"white",
+              boxShadow:"0 0 5px #8a8a8aaf",
+
             }}
           >
 
@@ -242,6 +245,7 @@ const Chatbot = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'stretch',
+                zIndex:"214748364"
               }}
             >
               {/* Top Image */}
@@ -275,7 +279,9 @@ const Chatbot = () => {
                     marginRight: "10px",
                     borderRadius: '8px',
                     transition: 'background-color 0.3s',
-                    position: "absolute"
+                    position: "absolute",
+                    zIndex:"214748364"
+
 
                   }}
                   onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.27)')}
@@ -336,7 +342,9 @@ const Chatbot = () => {
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      zIndex:"214748364"
+
                     }}
                     onClick={() => handleHelpClick("Send us a message")}
                   >
@@ -530,7 +538,8 @@ const Chatbot = () => {
                 fontFamily: "'Segoe UI', sans-serif",
                 fontWeight: 500,
                 boxShadow: (screen === 'intro' || screen === 'form' || screen === 'appointment') ? "0 5px 10px #b3b3b3ff" : "none",
-                zIndex: "100000"
+                zIndex:"214748364"
+
               }}
             >
               {[
