@@ -201,7 +201,7 @@ const Chatbot = () => {
             position: 'fixed',
             bottom: '80px',
             right: '20px',
-              zIndex:"214748364"
+            zIndex: "214748364"
 
           }}
         >
@@ -212,12 +212,12 @@ const Chatbot = () => {
               display: 'flex',
               flexDirection: 'column',
               borderRadius: "30px",
-              border:"none",
+              border: "none",
               overflow: "hidden",
               transition: 'width 0.3s ease, height 0.3s ease',
-              zIndex:"214748364",
-              backgroundColor:"white",
-              boxShadow:"0 0 5px #8a8a8aaf",
+              zIndex: "214748364",
+              backgroundColor: "white",
+              boxShadow: "0 0 5px #8a8a8aaf",
 
             }}
           >
@@ -245,7 +245,7 @@ const Chatbot = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'stretch',
-                zIndex:"214748364"
+                zIndex: "214748364"
               }}
             >
               {/* Top Image */}
@@ -280,7 +280,7 @@ const Chatbot = () => {
                     borderRadius: '8px',
                     transition: 'background-color 0.3s',
                     position: "absolute",
-                    zIndex:"214748364"
+                    zIndex: "214748364"
 
 
                   }}
@@ -343,7 +343,7 @@ const Chatbot = () => {
                       justifyContent: 'space-between',
                       alignItems: 'center',
                       cursor: 'pointer',
-                      zIndex:"214748364"
+                      zIndex: "214748364"
 
                     }}
                     onClick={() => handleHelpClick("Send us a message")}
@@ -538,7 +538,7 @@ const Chatbot = () => {
                 fontFamily: "'Segoe UI', sans-serif",
                 fontWeight: 500,
                 boxShadow: (screen === 'intro' || screen === 'form' || screen === 'appointment') ? "0 5px 10px #b3b3b3ff" : "none",
-                zIndex:"214748364"
+                zIndex: "214748364"
 
               }}
             >
