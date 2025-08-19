@@ -1,76 +1,116 @@
-# SAAS Chatbot
+# Cloud Botics Consultancy Chatbot
 
 ![Chatbot Banner](./image.png)
 
 ## 🚀 Overview
 
-SAAS Chatbot is a sleek, AI-powered frontend chatbot built with React and TypeScript, designed to integrate seamlessly with an **n8n** backend workflow for AI response automation. It uses OpenAI via n8n to deliver intelligent, real-time conversations on your website — no traditional backend needed!
+This is a modern, AI-powered chatbot designed for websites.
+It helps visitors connect instantly, captures leads (name + email), and provides intelligent answers through an **n8n backend workflow** powered by AI.
 
-## 🧠 Features
+The chatbot can be easily installed and run locally for testing, or deployed on your own website.
 
-- Modern, responsive chat UI built with React and Bootstrap
-- Easy integration with n8n workflows handling message processing
-- User onboarding with name & email capture
-- Persistent chat history stored in browser sessionStorage
-- Extendable UI with customizable options like chat window resizing
-- Simple deployment and maintenance by leveraging n8n's no-code backend
+---
 
-## 🛠️ Technologies Used
+## ✨ Features
 
-- **Frontend:** React.js, TypeScript, Bootstrap, Framer Motion
-- **Backend:** n8n workflows (no custom server code)
-- **AI Integration:** OpenAI API via n8n HTTP Request nodes
-- **State Management:** React Hooks & sessionStorage for persistence
+* 💬 Sleek, modern chat interface
+* 🧑‍💻 User onboarding (name + email capture)
+* 🤖 AI-powered responses via **n8n + OpenAI**
+* 💾 Chat history stored in browser session
+* 📱 Fully responsive design (works on desktop & mobile)
+* 🔧 Extendable UI with custom options (chat resizing, extra screens, meeting booking, etc.)
 
-## 📦 Installation & Setup
+---
 
-### Clone the repository
+## 🛠️ Technologies
+
+* **Frontend:** React.js, TypeScript, Bootstrap, Framer Motion
+* **Backend (No-Code):** n8n workflows
+* **AI Integration:** OpenAI API (via n8n HTTP requests)
+* **Storage:** Browser sessionStorage
+
+---
+
+## 📦 Installation (Local Setup)
+
+Follow these steps to run the chatbot locally:
+
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/alihassanml/SAAS-Chatbot.git
-cd SAAS-Chatbot
-````
+git clone https://github.com/alihassanml/cloud-botics-consultancy-chatbot.git
+cd cloud-botics-consultancy-chatbot
+```
 
-### Install dependencies
+### 2. Install Dependencies
+
+Make sure you have **Node.js (v16 or above)** installed.
+Then run:
 
 ```bash
 npm install
 ```
 
-### Configure Environment Variables
+### 3. Configure Backend (n8n)
 
-Set your OpenAI API key and n8n webhook URL inside your n8n instance and update the frontend to point to your n8n webhook URL for chat requests.
+* Set up an **n8n instance** (local or cloud).
+* Create a workflow with an **HTTP Webhook** to receive chat messages.
+* Connect the workflow to the **OpenAI API** (or any AI API of your choice).
+* Update the frontend code with your n8n webhook URL inside `fetch(...)` calls.
 
-### Start development server
+Example (inside the chatbot code):
 
-```bash
-npm start
+```ts
+const res = await fetch("https://your-n8n-instance/webhook/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ chat_ID: userId, message: userMessage })
+});
 ```
 
-Open your browser at `http://localhost:3000` to test the chatbot.
+### 4. Start Development Server
 
-## 🔗 Backend (n8n) Setup
+```bash
+npm run dev
+```
 
-* Configure an n8n workflow with an HTTP Webhook node to receive chat messages.
-* Use OpenAI API nodes or HTTP Request nodes within n8n to generate AI responses.
-* Respond back to the frontend with the chatbot's replies.
+Now open your browser at:
+
+```
+http://localhost:3000
+```
+
+Your chatbot will be running locally 🎉
+
+---
 
 ## 📸 Screenshots
 
-![Chat Interface](https://your-image-url.com/chat-interface.png)
+* **Intro Screen:** Welcomes the user and offers quick help
+* **Form Screen:** Collects name and email before chatting
+* **Chat Screen:** Real-time AI conversation
+* **Book Meeting:** Optional integration with Calendly
 
-## 🌐 Live Demo
+![Chat Example](https://your-image-url.com/chat.png)
 
-\[Your live demo link here]
+---
+
+## 🌐 Deployment
+
+Once tested locally, you can deploy the chatbot on:
+
+* **Vercel / Netlify** (recommended for React apps)
+* **Your own server**
+* **Embedded on any website** (via iframe or React integration)
+
+---
 
 ## 📝 License
 
-MIT License - see [LICENSE](https://github.com/alihassanml/SAAS-Chatbot/blob/main/LICENSE)
+MIT License – free to use, modify, and distribute.
 
-## 🤝 Contributing
+---
 
-Feel free to fork and submit PRs. Open issues for feature requests or bug reports.
+## 📬 Support
 
-## 📬 Contact
-
-Reach me at [alihassanbscs99@gmail.com](mailto:alihassanbscs99@gmail.com)
+For questions or setup help, please contact the development team.

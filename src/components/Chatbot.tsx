@@ -246,7 +246,7 @@ const Chatbot = () => {
                 flexDirection: 'column',
                 alignItems: 'stretch',
                 zIndex: "214748364"
-                
+
               }}
             >
               {/* Top Image */}
@@ -262,13 +262,13 @@ const Chatbot = () => {
                   }}
                 />
                 <br />
-               {screen === 'chat'  && ( <h4 style={{
-      paddingTop:"10px",
-      paddingLeft:"1%",
-      fontSize:"16px",
-      fontWeight:"bold"
-    }}> {userName}</h4>
-)}
+                {screen === 'chat' && (<h4 style={{
+                  paddingTop: "10px",
+                  paddingLeft: "1%",
+                  fontSize: "16px",
+                  fontWeight: "bold"
+                }}> {userName}</h4>
+                )}
               </div>
 
               {/* Name & Extend Button Row */}
@@ -280,18 +280,18 @@ const Chatbot = () => {
                   paddingTop: "10px"
                 }}
               >
-                 {screen !== 'chat'  && (
-                <div>
-                  <b>
-                    <h5 style={{ margin: 0, fontWeight: 'bold', fontFamily: "" }}>
-                      Hi {userName}
-                    </h5>
-                  </b>
-                  <p style={{ margin: 0, fontSize: 13, paddingTop: '5px' }}>
-                    I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br></br>How can we help?
-                  </p>
-                </div>
-              )}
+                {screen !== 'chat' && (
+                  <div>
+                    <b>
+                      <h5 style={{ margin: 0, fontWeight: 'bold', fontFamily: "" }}>
+                        Hi {userName}
+                      </h5>
+                    </b>
+                    <p style={{ margin: 0, fontSize: 13, paddingTop: '5px' }}>
+                      I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br></br>How can we help?
+                    </p>
+                  </div>
+                )}
 
 
               </div>
@@ -380,7 +380,7 @@ const Chatbot = () => {
                   <div style={{ textAlign: 'center', marginBottom: '20px' }}>
                     {/* <img src="./logo.jpg" alt="Form" style={{ width: '60px', height: '60px', borderRadius: "50%", marginBottom: '15px' }} /> */}
                     <br />
-                    <h5 style={{ color: '#333', marginBottom: '10px',fontWeight:"bold",fontFamily:"'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" }}>Welcome!</h5>
+                    <h5 style={{ color: '#333', marginBottom: '10px', fontWeight: "bold", fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" }}>Welcome!</h5>
                   </div>
                   <Form style={{ maxWidth: '300px', margin: 'auto' }}>
                     <Form.Label style={{ fontWeight: '500', color: '#333' }}>Name</Form.Label>
