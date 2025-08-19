@@ -91,7 +91,7 @@ Your chatbot will be running locally 🎉
 * **Chat Screen:** Real-time AI conversation
 * **Book Meeting:** Optional integration with Calendly
 
-![Chat Example](https://your-image-url.com/chat.png)
+![Chat Example](https://chat.cloudboticsconsultancy.com/)
 
 ---
 
