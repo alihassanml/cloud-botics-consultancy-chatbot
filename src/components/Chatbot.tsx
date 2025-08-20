@@ -420,10 +420,10 @@ const Chatbot = () => {
                     }}
                   >
                     {/* Search title */}
-                    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', background: "#e7e6e6bb", height: "35px", padding: "20px", borderRadius: "20px", }}>
+                    {/* <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', background: "#e7e6e6bb", height: "35px", padding: "20px", borderRadius: "20px", }}>
                       <strong style={{ flex: 1, fontSize: '15px', color: '#000' }}>Search for help</strong>
                       <FaSearch color="#3484daff" size={14} />
-                    </div>
+                    </div> */}
 
                     {/* Help options */}
                     {helpOptions.map((opt, idx) => (
@@ -596,12 +596,12 @@ const Chatbot = () => {
                         backgroundColor:"#f5f5f5ff",
                         cursor: "pointer",
                         padding:"10px",
-                        borderRadius:"15px",
+                        borderRadius:"20px",
                         fontSize:"14px"
                       }}
                       onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                     >
-                      <p style={{  marginBottom: "5px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize:"14px",fontWeight:"500" }}>
+                      <p style={{  marginBottom: "5px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize:"14px", fontFamily:" Arial" }}>
                         {item.q}
                         <span>{activeFaq === idx ? "−" : "+"}</span>
                       </p>
