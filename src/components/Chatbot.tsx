@@ -9,6 +9,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import { FaBookmark } from "react-icons/fa";
 import { RiExpandDiagonalLine } from "react-icons/ri";
 import { HiOutlineArrowsExpand } from "react-icons/hi";
+import { FaSearch } from "react-icons/fa";
 
 type Message = {
   type: 'bot' | 'user';
@@ -29,6 +30,7 @@ const Chatbot = () => {
   const [botBusy, setBotBusy] = useState(false);
 
   const [isExtended, setIsExtended] = useState(false);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
 
 
@@ -166,6 +168,79 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, typingMessage]);
 
+
+  const faqData = [
+    {
+      q: "What services does Cloud Botics Consultancy offer?",
+      a: `We specialize in AI automation consulting, helping businesses automate, deploy, and scale AI solutions—ranging from custom chatbots to full machine learning pipelines.`
+    },
+    {
+      q: "What is the process for developing AI solutions?",
+      a: `Our process follows four stages:\n
+- **Discovery & Planning** – Identify your use case and define success metrics.\n
+- **Architecture & Design** – Create data pipelines, model scope, and chatbot flows.\n
+- **Build & Train** – Develop, test, and validate models using real data.\n
+- **Deploy & Monitor** – Launch solutions with continuous monitoring and optimization.`
+    },
+    {
+      q: "What is SuAI?",
+      a: `SuAI (Smart Unified Artificial Intelligence) is our flagship AI platform for:\n
+- Conversational AI (customer service chatbots, internal tools)\n
+- Machine Learning & Generative AI (LLMs, AWS SageMaker, Bedrock)\n
+- Enterprise Automation (n8n, Supabase, PostgreSQL integrations)`
+    },
+    {
+      q: "How do you handle AI development on AWS?",
+      a: `We deliver AWS AI automation through:\n
+- Requirements gathering & solution design\n
+- Data preparation & ingestion (S3, Glue, Kinesis, DMS)\n
+- Model training & RAG integration (SageMaker, OpenSearch)\n
+- Deployment & automation (Lambda, CodePipeline, Terraform)\n
+- Real-time monitoring & retraining (CloudWatch, auto-scaling)`
+    },
+    {
+      q: "What types of machine learning projects do you support?",
+      a: `We offer end-to-end ML services:\n
+- Data collection & preparation\n
+- Model training, evaluation, and deployment\n
+- Ongoing monitoring & optimization`
+    },
+    {
+      q: "Why choose Cloud Botics Consultancy?",
+      a: `We combine deep technical expertise with business-focused execution, ensuring every AI solution is practical, scalable, and ROI-driven.`
+    },
+    {
+      q: "How is pricing structured?",
+      a: `Our pricing is flexible and tailored to your needs:\n
+- Start for free with a discovery session\n
+- Scale based on the scope and complexity of your project\n
+- No rigid packages—everything is customized for maximum value`
+    },
+    {
+      q: "Do you offer one-time or subscription pricing?",
+      a: `Yes, we offer both options:\n
+- One-time project pricing for fixed deliverables\n
+- Subscription plans for ongoing support, maintenance, and model updates`
+    },
+    {
+      q: "Are there any hidden fees?",
+      a: `No—our proposals are transparent and include all estimated costs upfront. Any changes are discussed and approved before proceeding.`
+    },
+    {
+      q: "Do you require a deposit to start?",
+      a: `Yes, for most projects we require a project initiation deposit, which is deducted from your total cost. This ensures commitment and reserves project resources.`
+    },
+    {
+      q: "Can I get a quote before committing?",
+      a: `Absolutely—our team can provide a free initial consultation and tailored quote based on your requirements.`
+    },
+    {
+      q: "How can I get in touch with Cloud Botics Consultancy?",
+      a: `You can use the contact form on our website, book a call, or book a meeting directly from our scheduling page.`
+    }
+  ];
+
+
   return (
     <>
       {/* Floating toggle button */}
@@ -175,7 +250,7 @@ const Chatbot = () => {
           position: 'fixed',
           bottom: '20px',
           right: '20px',
-          width: isOpen ? '50px' : '50px',
+          width: isOpen ? '50px' : '180px',
           height: '50px',
           borderRadius: isOpen ? '50%' : '25px',
           display: 'flex',
@@ -189,7 +264,7 @@ const Chatbot = () => {
           zIndex: "100000"
         }}
       >
-        {isOpen ? <FaChevronDown size={22} /> : <FiMessageCircle size={22} />}
+        {isOpen ? <FaChevronDown size={22} /> : (<><FiMessageCircle size={22} /><span>Need Help</span></>)}
       </Button>
 
       {isOpen && (
@@ -208,7 +283,7 @@ const Chatbot = () => {
           <Card
             style={{
               width: isExtended ? '400px' : '400px',
-              height: isExtended ? '610px' : '610px',
+              height: isExtended ? '640px' : '640px',
               display: 'flex',
               flexDirection: 'column',
               borderRadius: "30px",
@@ -345,10 +420,10 @@ const Chatbot = () => {
                     }}
                   >
                     {/* Search title */}
-                    {/* <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', background: "#e7e6e6bb", height: "35px", padding: "20px", borderRadius: "20px", }}>
+                    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', background: "#e7e6e6bb", height: "35px", padding: "20px", borderRadius: "20px", }}>
                       <strong style={{ flex: 1, fontSize: '15px', color: '#000' }}>Search for help</strong>
                       <FaSearch color="#3484daff" size={14} />
-                    </div> */}
+                    </div>
 
                     {/* Help options */}
                     {helpOptions.map((opt, idx) => (
@@ -408,6 +483,7 @@ const Chatbot = () => {
                           <img src="./image.webp" style={{ width: '28px', height: '28px', marginRight: '8px', borderRadius: '50%' }} />
                         )}
                         <div style={{
+
                           maxWidth: '75%',
                           paddingLeft: '13px',
                           paddingTop: '14px',
@@ -437,6 +513,7 @@ const Chatbot = () => {
                   {/* Chat Input */}
                   <div style={{
                     display: 'flex',
+
                     padding: '8px',
                     // borderTop: '1px solid #ddd',
                     boxShadow: "0 -4px 10px -4px #dfdfdf8a",
@@ -502,6 +579,49 @@ const Chatbot = () => {
                 </motion.div>
               )}
 
+              {screen === 'faq' && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ textAlign: 'left', padding: '15px', overflowY: 'auto', height: '100%' }}
+                >
+                  <h4 style={{ marginBottom: "15px", fontWeight: "600", fontFamily:"sans-serif",fontSize:"18px",paddingLeft:"5px" }}>Frequently Asked Questions ❓</h4>
+                  {faqData.map((item, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        marginBottom: "10px",
+                        borderBottom: "1px solid #eee",
+                        backgroundColor:"#f5f5f5ff",
+                        cursor: "pointer",
+                        padding:"10px",
+                        borderRadius:"15px",
+                        fontSize:"14px"
+                      }}
+                      onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+                    >
+                      <p style={{  marginBottom: "5px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize:"14px",fontWeight:"500" }}>
+                        {item.q}
+                        <span>{activeFaq === idx ? "−" : "+"}</span>
+                      </p>
+
+                      {activeFaq === idx && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ReactMarkdown>{item.a}</ReactMarkdown>
+                        </motion.div>
+                      )}
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+
+
 
 
 
@@ -524,7 +644,8 @@ const Chatbot = () => {
               {[
                 { icon: FaHome, label: 'Home', screenName: 'intro' },
                 { icon: FaEnvelope, label: 'Messages', screenName: 'chat' },
-                { icon: FaBookmark, label: 'Book Meeting', screenName: 'appointment' }
+                { icon: FaBookmark, label: 'Book Meeting', screenName: 'appointment' },
+                { icon: FaChevronRight, label: 'FAQs', screenName: 'faq' }
               ].map((item, idx) => {
                 const Icon = item.icon;
                 const isActive = screen === item.screenName;
