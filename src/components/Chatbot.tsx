@@ -244,28 +244,32 @@ const Chatbot = () => {
   return (
     <>
       {/* Floating toggle button */}
-      <Button
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          width: isOpen ? '50px' : '180px',
-          height: '50px',
-          borderRadius: isOpen ? '50%' : '25px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '8px',
-          background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
-          border: "none",
-          color: 'white',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-          zIndex: "100000"
-        }}
-      >
-        {isOpen ? <FaChevronDown size={22} /> : (<><FiMessageCircle size={22} /><span>Need Help</span></>)}
-      </Button>
+      {!isOpen && (
+        <Button
+          onClick={() => setIsOpen(true)}
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            width: '180px',
+            height: '50px',
+            borderRadius: '25px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
+            border: "none",
+            color: 'white',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            zIndex: "100000"
+          }}
+        >
+          <FiMessageCircle size={22} />
+          <span>Need Help</span>
+        </Button>
+      )}
+
 
       {isOpen && (
         <motion.div
@@ -274,7 +278,7 @@ const Chatbot = () => {
           transition={{ duration: 0.4 }}
           style={{
             position: 'fixed',
-            bottom: '80px',
+            bottom: '10px',
             right: '20px',
             zIndex: "214748364"
 
@@ -283,7 +287,7 @@ const Chatbot = () => {
           <Card
             style={{
               width: isExtended ? '400px' : '400px',
-              height: isExtended ? '615px' : '615px',
+              height: isExtended ? '590px' : '590px',
               display: 'flex',
               flexDirection: 'column',
               borderRadius: "30px",
@@ -321,56 +325,52 @@ const Chatbot = () => {
                 flexDirection: 'column',
                 alignItems: 'stretch',
                 zIndex: "214748364"
-
               }}
             >
-              {/* Top Image */}
-              <div style={{ display: 'flex', marginBottom: '10px' }}>
-                <img
-                  src="./image.webp"
-                  style={{
-                    width: "45px",
-                    height: "45px",
-                    borderRadius: '50%',
-                    objectFit: 'cover',
+              {/* Top Row: Logo + Close Button */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img
+                    src="./image.webp"
+                    style={{
+                      width: "45px",
+                      height: "45px",
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      marginRight: '10px'
+                    }}
+                  />
+                  {screen === 'chat' && (
+                    <h4 style={{
+                      fontSize: "16px",
+                      fontWeight: "bold"
+                    }}>{userName}</h4>
+                  )}
+                </div>
 
-                  }}
+                {/* Close Button */}
+                <FaChevronDown
+                  size={22}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setIsOpen(false)} // 👈 close chatbot
                 />
-                <br />
-                {screen === 'chat' && (<h4 style={{
-                  paddingTop: "10px",
-                  paddingLeft: "1%",
-                  fontSize: "16px",
-                  fontWeight: "bold"
-                }}> {userName}</h4>
-                )}
               </div>
 
-              {/* Name & Extend Button Row */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  paddingTop: "10px"
-                }}
-              >
-                {screen !== 'chat' && (
-                  <div>
-                    <b>
-                      <h5 style={{ margin: 0, fontWeight: 'bold', fontFamily: "" }}>
-                        Hi {userName}
-                      </h5>
-                    </b>
-                    <p style={{ margin: 0, fontSize: 13, paddingTop: '5px' }}>
-                      I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br></br>How can we help?
-                    </p>
-                  </div>
-                )}
-
-
-              </div>
+              {/* Intro text (only for intro/form screens) */}
+              {screen !== 'chat' && (
+                <div style={{ paddingTop: "5px" }}>
+                  <b>
+                    <h5 style={{ margin: 0, fontWeight: 'bold' }}>
+                      Hi {userName}
+                    </h5>
+                  </b>
+                  <p style={{ margin: 0, fontSize: 13, paddingTop: '5px' }}>
+                    I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br />How can we help?
+                  </p>
+                </div>
+              )}
             </div>
+
 
 
 
