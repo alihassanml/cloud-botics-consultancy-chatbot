@@ -283,7 +283,7 @@ const Chatbot = () => {
           <Card
             style={{
               width: isExtended ? '400px' : '400px',
-              height: isExtended ? '640px' : '640px',
+              height: isExtended ? '615px' : '615px',
               display: 'flex',
               flexDirection: 'column',
               borderRadius: "30px",
@@ -601,7 +601,7 @@ const Chatbot = () => {
                       }}
                       onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                     >
-                      <p style={{  marginBottom: "5px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize:"14px", fontFamily:" Arial" }}>
+                      <p style={{  marginBottom: "5px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize:"14px",fontWeight:"600", fontFamily:" Arial" }}>
                         {item.q}
                         <span>{activeFaq === idx ? "−" : "+"}</span>
                       </p>
