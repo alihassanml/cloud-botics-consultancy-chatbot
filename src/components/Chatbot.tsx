@@ -586,22 +586,22 @@ const Chatbot = () => {
                   transition={{ duration: 0.3 }}
                   style={{ textAlign: 'left', padding: '15px', overflowY: 'auto', height: '100%' }}
                 >
-                  <h4 style={{ marginBottom: "15px", fontWeight: "600", fontFamily:"sans-serif",fontSize:"18px",paddingLeft:"5px" }}>Frequently Asked Questions ❓</h4>
+                  <h4 style={{ marginBottom: "15px", fontWeight: "600", fontFamily: "sans-serif", fontSize: "18px", paddingLeft: "5px" }}>Frequently Asked Questions ❓</h4>
                   {faqData.map((item, idx) => (
                     <div
                       key={idx}
                       style={{
                         marginBottom: "10px",
                         borderBottom: "1px solid #eee",
-                        backgroundColor:"#f5f5f5ff",
+                        backgroundColor: "#f5f5f5ff",
                         cursor: "pointer",
-                        padding:"10px",
-                        borderRadius:"20px",
-                        fontSize:"14px"
+                        padding: "10px",
+                        borderRadius: "20px",
+                        fontSize: "14px"
                       }}
                       onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                     >
-                      <p style={{  marginBottom: "5px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize:"14px",fontWeight:"600", fontFamily:" Arial" }}>
+                      <p style={{ marginBottom: "5px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "14px", fontFamily: " Arial" }}>
                         {item.q}
                         <span>{activeFaq === idx ? "−" : "+"}</span>
                       </p>
