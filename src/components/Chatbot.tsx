@@ -1,15 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { FaArrowAltCircleUp, FaChevronDown, FaHome, FaEnvelope } from "react-icons/fa";
-import { FiMessageCircle } from 'react-icons/fi';
 import { Button, Form, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactMarkdown from 'react-markdown';
 import { motion } from "framer-motion";
 import { FaChevronRight } from 'react-icons/fa';
 import { FaBookmark } from "react-icons/fa";
-import { RiExpandDiagonalLine } from "react-icons/ri";
-import { HiOutlineArrowsExpand } from "react-icons/hi";
-import { FaSearch } from "react-icons/fa";
 
 type Message = {
   type: 'bot' | 'user';
@@ -18,7 +14,7 @@ type Message = {
 };
 
 const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [screen, setScreen] = useState<'intro' | 'form' | 'chat'>('intro');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -244,32 +240,6 @@ const Chatbot = () => {
   return (
     <>
       {/* Floating toggle button */}
-      {!isOpen && (
-        <Button
-          onClick={() => setIsOpen(true)}
-          style={{
-            position: 'fixed',
-            bottom: '20px',
-            right: '20px',
-            width: '180px',
-            height: '50px',
-            borderRadius: '25px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            background: "linear-gradient(135deg, #3484daff, #2fc4e2ff)",
-            border: "none",
-            color: 'white',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-            zIndex: "100000"
-          }}
-        >
-          <FiMessageCircle size={22} />
-          <span>Need Help</span>
-        </Button>
-      )}
-
 
       {isOpen && (
         <motion.div
@@ -349,11 +319,7 @@ const Chatbot = () => {
                 </div>
 
                 {/* Close Button */}
-                <FaChevronDown
-                  size={22}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => setIsOpen(false)} // 👈 close chatbot
-                />
+
               </div>
 
               {/* Intro text (only for intro/form screens) */}
@@ -364,13 +330,12 @@ const Chatbot = () => {
                       Hi {userName}
                     </h5>
                   </b>
-                  <p style={{ margin: 0, fontSize: 13, paddingTop: '5px' }}>
+                  <p style={{ margin: 0, fontSize: 14, paddingTop: '5px' }}>
                     I am <b>SuAI</b> from <b>Cloud Botics Consultancy.</b><br />How can we help?
                   </p>
                 </div>
               )}
             </div>
-
 
 
 
