@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { FaArrowAltCircleUp, FaChevronDown, FaHome, FaEnvelope } from "react-icons/fa";
+import { FaArrowAltCircleUp, FaHome, FaEnvelope } from "react-icons/fa";
 import { Button, Form, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactMarkdown from 'react-markdown';
