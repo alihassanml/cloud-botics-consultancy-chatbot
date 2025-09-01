@@ -1,4 +1,3 @@
-// App.jsx
 import { createPortal } from 'react-dom';
 import Chatbot from './components/Chatbot';
 
